@@ -75,8 +75,8 @@ def main():
             expected_salary = float(input("Enter your expected annual salary after graduation: "))
             years_in_college = float(input("Enter the number of years you'll have been in college when you graduate: "))
             tuition_total = annual_cost * years_in_college
-            pay_off_time = tuition_total / expected_salary
-            print(f"\nYou'll pay off college in {pay_off_time:.1f} years.")
+            pay_off_time = (tuition_total * 1.35 / expected_salary) * 5
+            print(f"\nIf you pay 20% of your income on debt, and you receive 35% interest by the time you pay off your loan,\nYou'll pay off college in {pay_off_time:.1f} years.")
             if pay_off_time >= 15:
                 print("That's way too long!")
             elif 10 <= pay_off_time < 15:
