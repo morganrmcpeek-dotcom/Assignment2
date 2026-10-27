@@ -72,7 +72,19 @@ def main():
         elif choice == "5":
             print(f"\nOne CS1430 class costs: ${cost_per_class(annual_cost, credits):.2f}")
         elif choice == "6":
-            print(f"\nWorth it? If you make enough to pay it off!")
+            expected_salary = float(input("Enter your expected annual salary after graduation: "))
+            years_in_college = float(input("Enter the number of years you'll have been in college when you graduate: "))
+            tuition_total = annual_cost * years_in_college
+            pay_off_time = tuition_total / expected_salary
+            print(f"\nYou'll pay off college in {pay_off_time:.1f} years.")
+            if pay_off_time >= 15:
+                print("That's way too long!")
+            elif 10 <= pay_off_time < 15:
+                print("That's alright for most.")
+            elif 5 <= pay_off_time < 10:
+                print("That's pretty good!")
+            elif 0 <= pay_off_time < 5:
+                print("Holy cow! You an engineer or something?")
         # Add a branch for each menu option here.
 
 
